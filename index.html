@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+
+    <style>
+        /* 폰트는 style 제일 앞에 */
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+        .mytitle {
+            background-color: green;
+            color: white;
+            height: 250px;
+            /* 아래 4줄을 통해 div 안에 있는 내용을 정렬할 수 있음 no padding */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* 이미지 삽입 ; linear-gradient는 이미지 밝기 조절*/
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+
+        /* div 안에 들어있는 버튼 스타일 지정; > 를 통해 */
+        .mytitle>button {
+            width: 250px;
+            height: 50px;
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            border-radius: 50px;
+            margin-top: 20px;
+        }
+
+        /* 버튼위에 마우스를 올렸을 때 스타일(hover) */
+        .mytitle>button:hover {
+            border: 2px solid rgb(234, 236, 197);
+            background-color: rgba(230, 202, 125, 0.507);
+            color: white;
+        }
+        .mycards {
+            width: 1200px;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            /* margin: 20px auto 20px auto */
+
+        }
+        .mycmnt {
+            color: gray;
+        }
+        .mypost {
+            /* background-color: green ; */
+            width: 500px;
+            margin: 20px auto 20px auto;
+            padding: 20px 20px 20px 20px;
+            /* 박스에 그림자 넣기; 3px 그림자 길이; 그림자는 중앙부에서 시작 */
+            box-shadow: 0px 0px 3px 0px gray;
+        }
+        .mybtn {
+            display: flex;
+            /* 가로 정렬 row 세로 정렬 column */
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        /* div 안에 있는 컴포넌트들에 개별 적용하기 위해서는 > 을 통해 접근한다  */
+        .mybtn > button {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mytitle">
+        <h1>내 인생 영화들</h1>
+        <button>영화 추가하기</button>
+    </div>
+    <div class="mypost">
+        <!-- forms > floating labels -->
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput"> 영화url </label>
+        </div>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">코멘트</label>
+        </div>
+        <div class="mybtn">
+            <!-- components> buttons -->
+            <button type="button" class="btn btn-dark">기록하기</button>
+            <button type="button" class="btn btn-outline-dark">닫기</button>
+        </div>
+
+    </div>
+    <div class="mycards">
+        <!-- https://getbootstrap.com/docs/5.0/components/card/ 카드 css 복붙(grid cards)-->
+        <!-- 카드 한줄에 n개씩 정렬하려면 row-cols-md-{n} 지정 -->
+        <!-- 이미지 넣으려면 <img src= {이미지경로} -->
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> 더 수어사이드 스쿼드</h5>
+                        <p class="card-text">영화 설명</p>
+                        <p>⭐⭐⭐</p>
+                        <p class="mycmnt">내 의견 쓰기</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> 더 수어사이드 스쿼드</h5>
+                        <p class="card-text">영화 설명</p>
+                        <p>⭐⭐⭐</p>
+                        <p class="mycmnt">내 의견 쓰기</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> 더 수어사이드 스쿼드</h5>
+                        <p class="card-text">영화 설명</p>
+                        <p>⭐⭐⭐</p>
+                        <p class="mycmnt">내 의견 쓰기</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> 더 수어사이드 스쿼드</h5>
+                        <p class="card-text">영화 설명</p>
+                        <p>⭐⭐⭐</p>
+                        <p class="mycmnt">내 의견 쓰기</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
